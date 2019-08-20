@@ -4,6 +4,9 @@ import 'demo/ListDemo.dart';
 import 'demo/home.dart';
 import 'demo/SliverDemo.dart';
 import 'demo/NavigatorDemo.dart';
+import 'package:flutter/services.dart';
+import 'dart:io';
+
 void main() {
   runApp(App());
 }
@@ -11,6 +14,12 @@ void main() {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    if(Platform.isAndroid){
+      SystemUiOverlayStyle systemUiOverlayStyle =SystemUiOverlayStyle(
+        statusBarColor: Colors.yellow
+      );
+      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    }
     // TODO: implement build
     return MaterialApp(
       routes: {
